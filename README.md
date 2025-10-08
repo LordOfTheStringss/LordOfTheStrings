@@ -1,4 +1,4 @@
-# Lord of the Strings Grubu BİL495 Bitirme Projesi
+# Lord of the Strings Grubu BİL495/496 Bitirme Projesi
 
 ## Üyeler: 
 Aylin Doğan 221101058
