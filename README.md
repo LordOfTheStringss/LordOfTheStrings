@@ -2,8 +2,11 @@
 
 ## Üyeler: 
 Aylin Doğan 221101058
-Emir Yücedağ 221101077
+
+Emir Yücedağ 221101077 (Product Manager)
+
 Kerem Kazandır 221101007
+
 Zeynep Yağmur Bozdağ 221101078
 
 ## Google Drive Linki:
