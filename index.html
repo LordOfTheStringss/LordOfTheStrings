@@ -7,68 +7,79 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-white font-sans">
-    <nav class="p-6 flex justify-between items-center border-b border-slate-800">
-        <h1 class="text-2xl font-bold text-indigo-500">Lord of the Strings</h1>
-        <div class="space-x-6 text-sm md:text-base">
-            <a href="#features" class="hover:text-indigo-400">Features</a>
-            <a href="#team" class="hover:text-indigo-400">Team</a>
-        </div>
-    </nav>
+<body class="bg-slate-900 text-white font-sans selection:bg-indigo-500/30">
 
-    <header class="py-20 px-6 text-center">
-        <h2 class="text-5xl font-extrabold mb-6">Gather Up</h2>
-        <p class="max-w-3xl mx-auto text-xl text-slate-400 leading-relaxed">
-            An innovative, AI-powered social interaction platform designed to reclaim social lives through smart availability matching and advanced Two-Tower neural architectures.
-        </p>
+    <header class="pt-20 pb-12 px-6 text-center bg-gradient-to-b from-slate-800/50 to-transparent">
+        <h1 class="text-6xl md:text-7xl font-black text-indigo-500 mb-4 tracking-tighter">
+            LORD OF THE STRINGS
+        </h1>
+        <h2 class="text-2xl text-slate-400 font-light mb-10 tracking-[0.2em] uppercase">Team Members</h2>
+        
+        <div class="flex flex-wrap justify-center gap-6 mb-16">
+            <div class="px-8 py-4 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-xl hover:border-indigo-500 transition-all duration-300">
+                <span class="text-xl font-bold block">Emir Yücedağ</span>
+            </div>
+            <div class="px-8 py-4 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-xl hover:border-indigo-500 transition-all duration-300">
+                <span class="text-xl font-bold block">Aylin Doğan</span>
+            </div>
+            <div class="px-8 py-4 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-xl hover:border-indigo-500 transition-all duration-300">
+                <span class="text-xl font-bold block">Zeynep Yağmur Bozdağ</span>
+            </div>
+            <div class="px-8 py-4 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-xl hover:border-indigo-500 transition-all duration-300">
+                <span class="text-xl font-bold block">Kerem Kazandır</span>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto border-t border-slate-800 pt-16">
+            <h3 class="text-5xl md:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                Gather Up
+            </h3>
+            <p class="text-xl md:text-2xl text-slate-400 leading-relaxed italic">
+                An innovative, AI-powered social interaction platform designed to reclaim social lives.
+            </p>
+        </div>
     </header>
 
-    <section id="features" class="py-16 bg-slate-800/50">
+    <section class="py-12 flex flex-col md:flex-row justify-center items-center gap-8 px-6">
+        <a href="https://github.com/LordOfTheStringss/LordOfTheStrings" target="_blank" 
+           class="group flex items-center space-x-4 bg-slate-700 hover:bg-slate-600 px-10 py-6 rounded-2xl transition-all duration-300 w-full md:w-auto justify-center border-b-4 border-slate-900 active:border-b-0 active:translate-y-1">
+            <i class="fab fa-github text-4xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-2xl font-bold">GitHub Repository</span>
+        </a>
+        
+        <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank" 
+           class="group flex items-center space-x-4 bg-indigo-600 hover:bg-indigo-500 px-10 py-6 rounded-2xl transition-all duration-300 w-full md:w-auto justify-center border-b-4 border-indigo-900 active:border-b-0 active:translate-y-1 shadow-lg shadow-indigo-500/20">
+            <i class="fab fa-google-drive text-4xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-2xl font-bold">495 Reports</span>
+        </a>
+    </section>
+
+    <section id="features" class="py-20">
         <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 text-center text-indigo-400">AI-Powered Core Contributions</h3>
+            <h3 class="text-3xl font-bold mb-12 text-center text-indigo-400 uppercase tracking-widest">Core Contributions</h3>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-700 p-8 rounded-xl border border-slate-600">
-                    <i class="fas fa-brain text-3xl mb-4 text-indigo-400"></i>
-                    <h4 class="text-xl font-bold mb-2">Two-Tower Matching</h4>
-                    <p class="text-slate-400 text-sm">Utilizing Cosine Similarity to intelligently pair user and event embeddings.</p>
+                <div class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-brain text-4xl mb-6 text-indigo-400"></i>
+                    <h4 class="text-2xl font-bold mb-3">Two-Tower Matching</h4>
+                    <p class="text-slate-400">Utilizing Cosine Similarity to intelligently pair user and event embeddings.</p>
                 </div>
-                <div class="bg-slate-700 p-8 rounded-xl border border-slate-600">
-                    <i class="fas fa-file-invoice text-3xl mb-4 text-indigo-400"></i>
-                    <h4 class="text-xl font-bold mb-2">OCR Timetable Parsing</h4>
-                    <p class="text-slate-400 text-sm">AI-driven extraction of student schedules for seamless availability updates.</p>
+                <div class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-file-invoice text-4xl mb-6 text-indigo-400"></i>
+                    <h4 class="text-2xl font-bold mb-3">OCR Parsing</h4>
+                    <p class="text-slate-400">AI-driven extraction of student schedules for seamless availability updates.</p>
                 </div>
-                <div class="bg-slate-700 p-8 rounded-xl border border-slate-600">
-                    <i class="fas fa-users-cog text-3xl mb-4 text-indigo-400"></i>
-                    <h4 class="text-xl font-bold mb-2">Algorithmic Merging</h4>
-                    <p class="text-slate-400 text-sm">Dynamic event merging with a 24-hour critical operational constraint.</p>
+                <div class="bg-slate-800/40 p-8 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-colors">
+                    <i class="fas fa-users-cog text-4xl mb-6 text-indigo-400"></i>
+                    <h4 class="text-2xl font-bold mb-3">Algorithmic Merging</h4>
+                    <p class="text-slate-400">Dynamic event merging with a 24-hour critical operational constraint.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="team" class="py-16 border-t border-slate-800 text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <p class="mb-8 text-slate-500 italic uppercase tracking-widest text-sm">Critical Constraint: Human-in-the-Loop OCR Verification</p>
-            
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-medium">Emir Yücedağ</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-medium">Aylin Doğan</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-medium">Zeynep Yağmur Bozdağ</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm font-medium">Kerem Kazandır</span>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-                <a href="https://github.com/LordOfTheStringss/LordOfTheStrings" target="_blank" class="flex items-center space-x-2 bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-full transition-all duration-300 w-full md:w-auto justify-center">
-                    <i class="fab fa-github text-xl"></i>
-                    <span>GitHub Repository</span>
-                </a>
-                
-                <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank" class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-500 px-6 py-3 rounded-full transition-all duration-300 w-full md:w-auto justify-center">
-                    <i class="fab fa-google-drive text-xl"></i>
-                    <span>495 Reports</span>
-                </a>
-            </div>
-        </div>
+    <footer class="py-12 text-center text-slate-600 border-t border-slate-800">
+        <p class="italic">Critical Constraint: Human-in-the-Loop OCR Verification</p>
     </footer>
+
 </body>
 </html>
