@@ -6,97 +6,331 @@
     <title>Gather Up | Lord of the Strings</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-slate-900 text-white font-sans selection:bg-indigo-500/30">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
 
-    <header class="pt-24 pb-12 px-6 text-center bg-gradient-to-b from-slate-800/50 to-transparent">
-        <h1 class="text-6xl md:text-8xl font-black text-indigo-500 mb-6 tracking-tighter">
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1); }
+        .reveal.visible { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+        /* Stat counter */
+        .stat-number { font-variant-numeric: tabular-nums; }
+
+        /* Feature card hover glow */
+        .feature-card:hover { box-shadow: 0 0 0 1px rgba(139,92,246,.45), 0 20px 40px rgba(139,92,246,.1); }
+
+        /* Feature icon circle */
+        .feature-icon-wrap {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(139,92,246,.12);
+            margin-bottom: 20px;
+            transition: background .25s;
+        }
+        .feature-card:hover .feature-icon-wrap { background: rgba(139,92,246,.22); }
+
+        /* Pill eyebrow badge */
+        .pill-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(139,92,246,.12);
+            border: 1px solid rgba(139,92,246,.3);
+            color: #c4b5fd;
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            padding: 6px 14px; border-radius: 999px;
+            margin-bottom: 20px;
+        }
+        .pill-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #a78bfa; display: block; }
+
+        /* Link pulse */
+        @keyframes border-pulse { 0%,100%{border-color:rgba(139,92,246,.2)} 50%{border-color:rgba(139,92,246,.7)} }
+        .pulse-border { animation: border-pulse 3s ease-in-out infinite; }
+
+        /* CTA banner gradient */
+        .cta-banner {
+            background: linear-gradient(135deg, #7c3aed 0%, #7c3aed 50%, #7e22ce 100%);
+            border-radius: 24px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white font-sans selection:bg-violet-500/30">
+
+    <!-- ─────────────────────────────────────── HEADER ── -->
+    <header class="pt-24 pb-12 px-6 text-center bg-gradient-to-b from-zinc-900/50 to-transparent">
+        <h1 class="text-6xl md:text-8xl font-black text-violet-500 mb-6 tracking-tighter">
             LORD OF THE STRINGS
         </h1>
-        <h2 class="text-2xl text-slate-400 font-light mb-12 tracking-[0.3em] uppercase border-y border-slate-800 inline-block py-2 px-8">
+        <h2 class="text-2xl text-zinc-400 font-light mb-12 tracking-[0.3em] uppercase border-y border-zinc-900 inline-block py-2 px-8">
             Team Members
         </h2>
-        
+
         <div class="flex flex-wrap justify-center gap-6 mb-20">
-            <div class="px-10 py-5 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-2xl hover:border-indigo-500 hover:-translate-y-1 transition-all duration-300">
+            <a href="https://github.com/emiryucedag" target="_blank" class="px-10 py-5 bg-zinc-900 border-2 border-violet-500/20 rounded-2xl shadow-2xl hover:border-violet-500 hover:-translate-y-1 transition-all duration-300">
                 <span class="text-2xl font-bold block">Emir Yücedağ</span>
-            </div>
-            <div class="px-10 py-5 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-2xl hover:border-indigo-500 hover:-translate-y-1 transition-all duration-300">
+            </a>
+            <a href="https://github.com/Aylindogn" target="_blank" class="px-10 py-5 bg-zinc-900 border-2 border-violet-500/20 rounded-2xl shadow-2xl hover:border-violet-500 hover:-translate-y-1 transition-all duration-300">
                 <span class="text-2xl font-bold block">Aylin Doğan</span>
-            </div>
-            <div class="px-10 py-5 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-2xl hover:border-indigo-500 hover:-translate-y-1 transition-all duration-300">
+            </a>
+            <a href="https://github.com/zyamur" target="_blank" class="px-10 py-5 bg-zinc-900 border-2 border-violet-500/20 rounded-2xl shadow-2xl hover:border-violet-500 hover:-translate-y-1 transition-all duration-300">
                 <span class="text-2xl font-bold block">Zeynep Yağmur Bozdağ</span>
-            </div>
-            <div class="px-10 py-5 bg-slate-800 border-2 border-indigo-500/20 rounded-2xl shadow-2xl hover:border-indigo-500 hover:-translate-y-1 transition-all duration-300">
+            </a>
+            <a href="https://github.com//Kerdi60" target="_blank" class="px-10 py-5 bg-zinc-900 border-2 border-violet-500/20 rounded-2xl shadow-2xl hover:border-violet-500 hover:-translate-y-1 transition-all duration-300">
                 <span class="text-2xl font-bold block">Kerem Kazandır</span>
-            </div>
+            </a>
         </div>
 
         <div class="max-w-4xl mx-auto pt-10">
-            <h3 class="text-5xl md:text-7xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-500">
+            <h3 class="text-5xl md:text-7xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500">
                 Gather Up
             </h3>
-            <p class="text-xl md:text-3xl text-slate-400 leading-relaxed font-light">
+            <p class="text-xl md:text-3xl text-zinc-400 leading-relaxed font-light">
                 An AI-powered social interaction platform designed to bridge the gap between busy schedules and meaningful connections.
             </p>
         </div>
     </header>
 
-    <section class="py-16 flex flex-col md:flex-row justify-center items-center gap-10 px-6">
-        <a href="https://github.com/orgs/LordOfTheStringss/repositories" target="_blank" 
-           class="group flex items-center space-x-6 bg-slate-700 hover:bg-slate-600 px-12 py-8 rounded-3xl transition-all duration-300 w-full md:w-auto justify-center border-b-8 border-slate-950 active:border-b-0 active:translate-y-2 shadow-2xl">
+
+    <!-- ─────────────────────────────────────── CTA BUTTONS ── -->
+    <section class="py-16 flex flex-col md:flex-row justify-center items-center gap-10 px-6 flex-wrap">
+        <a href="https://github.com/orgs/LordOfTheStringss/repositories" target="_blank"
+           id="btn-github"
+           class="group flex items-center space-x-6 bg-zinc-800 hover:bg-slate-600 px-12 py-8 rounded-3xl transition-all duration-300 w-full md:w-auto justify-center border-b-8 border-slate-950 active:border-b-0 active:translate-y-2 shadow-2xl">
             <i class="fab fa-github text-5xl group-hover:rotate-12 transition-transform"></i>
             <span class="text-3xl font-bold">GitHub Repositories</span>
         </a>
-        
-        <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank" 
-           class="group flex items-center space-x-6 bg-indigo-600 hover:bg-indigo-500 px-12 py-8 rounded-3xl transition-all duration-300 w-full md:w-auto justify-center border-b-8 border-indigo-900 active:border-b-0 active:translate-y-2 shadow-2xl shadow-indigo-500/20">
+
+        <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank"
+           id="btn-drive"
+           class="group flex items-center space-x-6 bg-violet-600 hover:bg-violet-500 px-12 py-8 rounded-3xl transition-all duration-300 w-full md:w-auto justify-center border-b-8 border-violet-900 active:border-b-0 active:translate-y-2 shadow-2xl shadow-violet-500/20">
             <i class="fab fa-google-drive text-5xl group-hover:scale-110 transition-transform"></i>
             <span class="text-3xl font-bold">Project Reports</span>
         </a>
+
+        <a href="https://gather-up-web.vercel.app/?_vercel_share=ziZ5TPg55u9qydlcj9FecEAc1zXIu3P0" target="_blank"
+           id="btn-dashboard"
+           class="group flex items-center space-x-6 bg-zinc-900 hover:bg-zinc-800 px-12 py-8 rounded-3xl transition-all duration-300 w-full md:w-auto justify-center border-b-8 border-slate-950 active:border-b-0 active:translate-y-2 shadow-2xl pulse-border border-2">
+            <i class="fas fa-shield-halved text-5xl group-hover:scale-110 transition-transform text-violet-400"></i>
+            <span class="text-3xl font-bold">Admin Dashboard</span>
+        </a>
     </section>
 
-    <section id="features" class="py-24 bg-slate-800/20">
+    <!-- ─────────────────────────────────────── FEATURES ── -->
+    <section id="features" class="py-24 bg-zinc-900/20">
         <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-4xl font-black mb-16 text-center text-indigo-400 uppercase tracking-[0.4em]">Features</h3>
+            <div class="text-center mb-4">
+                <span class="pill-badge">What we built</span>
+            </div>
+            <h3 class="text-4xl md:text-5xl font-black mb-5 text-center text-white">Why Gather<span class="text-violet-400">Up?</span></h3>
+            <p class="text-center text-zinc-400 mb-16 text-base max-w-xl mx-auto">Everything you need to discover, coordinate, and join real-world events — powered by AI, validated by 27 test suites.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-brain text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">Two-Tower Architecture</h4>
-                    <p class="text-slate-400 leading-relaxed">Advanced neural matching using user and event embeddings to provide hyper-personalized recommendations.</p>
+
+                <!-- 1 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal">
+                    <div class="feature-icon-wrap"><i class="fas fa-brain text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Gated Two-Tower AI</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Contrastive-trained neural architecture with GRU history encoder and multi-head self-attention (4 heads) over 52 interest tags. Produces user &amp; event embeddings via pgvector for millisecond-latency One-Tap Suggestions.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">InfoNCE Loss</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">ONNX ~6 MB</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">pgvector IVFFlat</span>
+                    </div>
                 </div>
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-calendar-check text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">Smart Availability</h4>
-                    <p class="text-slate-400 leading-relaxed">Automated schedule matching that finds the perfect time slot for everyone in the group without the back-and-forth.</p>
+
+                <!-- 2 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.06s">
+                    <div class="feature-icon-wrap"><i class="fas fa-calendar-check text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">168-Dim Schedule Engine</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">User availability is encoded as a 168-dimensional boolean matrix (7 days × 24 hours). Vectorized conflict scanning at O(168) per user detects double-booking instantly before it touches the database.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Atomic Validation</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Gap Analysis</span>
+                    </div>
                 </div>
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-file-medical text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">OCR Schedule Parsing</h4>
-                    <p class="text-slate-400 leading-relaxed">Instantly upload and parse university timetables or work schedules using AI-driven optical character recognition.</p>
+
+                <!-- 3 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.12s">
+                    <div class="feature-icon-wrap"><i class="fas fa-file-medical text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">OCR Schedule Parsing</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Uploads any university timetable image. AI OCR extracts courses, days, and hour ranges into Busy Blocks via a Human-in-the-Loop review screen. Source image is permanently purged from the server after parsing — KVKK compliant.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">KVKK / GDPR</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Confidence Fallback</span>
+                    </div>
                 </div>
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-layer-group text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">Algorithmic Merging</h4>
-                    <p class="text-slate-400 leading-relaxed">Dynamic event merging logic that optimizes social gatherings based on a 24-hour operational window.</p>
+
+                <!-- 4 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.18s">
+                    <div class="feature-icon-wrap"><i class="fas fa-layer-group text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Group AI Planner &amp; Event Merging</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Computes a 52-dim Group Composite Vector (element-wise mean of all participants' interest vectors) and resolves a spatial centroid for fair meeting-point selection. Under-capacity events are autonomously merged via Supabase pg_cron + pgvector similarity.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">24h merge window</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">pg_cron</span>
+                    </div>
                 </div>
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-map-marked-alt text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">Social Hub</h4>
-                    <p class="text-slate-400 leading-relaxed">A centralized platform to discover local events and connect with like-minded individuals effortlessly.</p>
+
+                <!-- 5 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.24s">
+                    <div class="feature-icon-wrap"><i class="fas fa-map-marked-alt text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Spatio-Temporal Heatmaps</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Live map clusters 1,000+ event pins at &lt;97 ms average latency. Region analysis queries historical event frequency to surface "the spirit of a location." Precise GPS is transient and never persisted.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">97 ms avg</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Haversine</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Privacy by design</span>
+                    </div>
                 </div>
-                <div class="bg-slate-800/50 p-10 rounded-3xl border border-slate-700 hover:bg-slate-800 transition-all duration-300 group">
-                    <i class="fas fa-bolt text-5xl mb-8 text-indigo-400 group-hover:scale-110 transition-transform"></i>
-                    <h4 class="text-2xl font-bold mb-4">Real-time Updates</h4>
-                    <p class="text-slate-400 leading-relaxed">Instant notifications and live updates for schedule changes, ensure no one ever misses out on a plan.</p>
+
+                <!-- 6 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.30s">
+                    <div class="feature-icon-wrap"><i class="fas fa-bolt text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Real-Time Event Chat</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Event-scoped WebSocket channels powered by Supabase Realtime. Messages are isolated to confirmed participants only — RLS policies enforced at the database engine level, not the app layer.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Supabase Realtime</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">TLS encrypted</span>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.36s">
+                    <div class="feature-icon-wrap"><i class="fas fa-id-badge text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Institutional Trust</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Sign-up is restricted to verified .edu.tr and whitelisted corporate domains via a live database lookup. Admins can update the Trusted Circle in real-time without a code deploy; under-18 registration is hard-blocked.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Dynamic whitelist</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Supabase Auth</span>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.42s">
+                    <div class="feature-icon-wrap"><i class="fas fa-trophy text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Gamification &amp; Badges</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Attendance, moderation contributions, and social milestones unlock badges and XP. Each badge awards 10 XP automatically. Busy Mode suspends all AI-generated invitations while active, preventing notification fatigue.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">XP system</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Busy Mode</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Panic button</span>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="feature-card bg-zinc-900/50 p-10 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-all duration-300 group reveal" style="transition-delay:.48s">
+                    <div class="feature-icon-wrap"><i class="fas fa-shield-halved text-xl text-violet-400"></i></div>
+                    <h4 class="text-xl font-bold mb-3">Admin Dashboard &amp; Moderation</h4>
+                    <p class="text-zinc-400 leading-relaxed mb-4">Web-based admin panel for real-time user metrics, ban workflow, and report management. All privileged queries require the Supabase Service Role — standard clients are mathematically blocked by RLS.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">RLS guardrails</span>
+                        <span class="text-xs bg-violet-500/10 border border-violet-500/20 text-violet-300 px-2 py-1 rounded-lg">Vercel hosted</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ─────────────────────────────────────── TECH STACK ── -->
+    <section id="stack" class="py-24 bg-zinc-900/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="text-4xl font-black mb-16 text-center text-violet-400 uppercase tracking-[0.4em] reveal">Tech Stack</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">Frontend</div>
+                    <div class="font-bold text-lg mb-1">React Native + Expo Router</div>
+                    <div class="text-zinc-400 text-sm">TypeScript, File-based routing, iOS &amp; Android</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal" style="transition-delay:.06s">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">Backend</div>
+                    <div class="font-bold text-lg mb-1">Supabase (PostgreSQL)</div>
+                    <div class="text-zinc-400 text-sm">Auth, Realtime, Storage, Edge Functions, RLS</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal" style="transition-delay:.12s">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">AI / Vectors</div>
+                    <div class="font-bold text-lg mb-1">pgvector + ONNX</div>
+                    <div class="text-zinc-400 text-sm">IVFFlat index, contrastive learning, ~6 MB binary</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal" style="transition-delay:.18s">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">Data Privacy</div>
+                    <div class="font-bold text-lg mb-1">KVKK &amp; GDPR</div>
+                    <div class="text-zinc-400 text-sm">RLS policies, ephemeral OCR pipeline, location abstraction</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal" style="transition-delay:.24s">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">Training Data</div>
+                    <div class="font-bold text-lg mb-1">Synthetic Pipeline</div>
+                    <div class="text-zinc-400 text-sm">100K user profiles · 1M events · hard negative mining</div>
+                </div>
+                <div class="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 reveal" style="transition-delay:.30s">
+                    <div class="text-violet-400 text-xs font-mono uppercase tracking-widest mb-3">Testing</div>
+                    <div class="font-bold text-lg mb-1">Custom TypeScript Runner</div>
+                    <div class="text-zinc-400 text-sm">27 suites · 99 sub-tests · 9.61 s · 100% pass</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center text-slate-500">
-        <p class="text-lg">&copy; 2026 Lord of the Strings - Gather Up Project</p>
+    <!-- ─────────────────────────────────────── CTA BANNER ── -->
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="cta-banner p-12 md:p-16 text-center reveal">
+                <div class="text-center mb-4">
+                    <span class="pill-badge" style="background:rgba(255,255,255,.15); border-color:rgba(255,255,255,.25); color:#fff;">TOBB ETÜ · 2026</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-5">Your city is waiting.</h2>
+                <p class="text-violet-200 text-lg mb-10 max-w-xl mx-auto">Gather Up is a zero-budget, AI-native platform that turns busy schedules into shared moments — built by four students, validated by 99 automated tests.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://gather-up-web.vercel.app/?_vercel_share=ziZ5TPg55u9qydlcj9FecEAc1zXIu3P0" target="_blank"
+                       class="flex items-center gap-3 bg-white text-violet-700 hover:bg-violet-50 font-bold px-8 py-4 rounded-2xl shadow-xl transition-all duration-200">
+                        <i class="fas fa-shield-halved text-xl"></i> Admin Dashboard
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank"
+                       class="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 border border-white/20">
+                        <i class="fab fa-google-drive text-xl"></i> Read the Report
+                    </a>
+                    <a href="https://github.com/orgs/LordOfTheStringss/repositories" target="_blank"
+                       class="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 border border-white/20">
+                        <i class="fab fa-github text-xl"></i> View Source
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─────────────────────────────────────── FOOTER ── -->
+    <footer class="py-20 text-center text-zinc-500">
+        <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm">
+            <a href="https://github.com/LordOfTheStringss/GatherUp" target="_blank" class="hover:text-violet-400 transition-colors">
+                <i class="fab fa-github mr-2"></i>App Repo
+            </a>
+            <a href="https://github.com/LordOfTheStringss/GatherUp_Web" target="_blank" class="hover:text-violet-400 transition-colors">
+                <i class="fab fa-github mr-2"></i>Dashboard Repo
+            </a>
+            <a href="https://gather-up-web.vercel.app/?_vercel_share=ziZ5TPg55u9qydlcj9FecEAc1zXIu3P0" target="_blank" class="hover:text-violet-400 transition-colors">
+                <i class="fas fa-shield-halved mr-2"></i>Admin Panel
+            </a>
+            <a href="https://drive.google.com/drive/folders/1TIU-L9z9zcC49MF3uCsZ6t4BEQx8KVSy" target="_blank" class="hover:text-violet-400 transition-colors">
+                <i class="fab fa-google-drive mr-2"></i>Reports
+            </a>
+        </div>
+        <p class="text-lg">&copy; 2026 Lord of the Strings — Gather Up Project · TOBB ETÜ</p>
     </footer>
+
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
